@@ -1,6 +1,6 @@
 <template>
   <label class="mint-switch">
-    <input class="mint-switch-input" @change="$emit('change', currentValue)" type="checkbox" v-model="currentValue">
+    <input class="mint-switch-input" @change="$emit('change', currentValue)" :disabled="disabled" type="checkbox" v-model="currentValue">
     <span class="mint-switch-core"></span>
     <div class="mint-switch-label"><slot></slot></div>
   </label>
@@ -21,7 +21,8 @@ export default {
   name: 'mt-switch',
 
   props: {
-    value: Boolean
+    value: Boolean,
+    disabled: Boolean
   },
   computed: {
     currentValue: {
